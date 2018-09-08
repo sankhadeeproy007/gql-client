@@ -3,7 +3,7 @@ import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
 
 import PlayerList from './components/PlayerList';
-import AddTeam from './components/AddTeam';
+import AddPlayer from './components/AddPlayer';
 
 // ApolloClient setup
 const client = new ApolloClient({
@@ -17,7 +17,7 @@ class App extends Component {
         <div id="main">
           <h1>Learn GraphQL!</h1>
           <PlayerList />
-          <AddTeam />
+          <AddPlayer />
         </div>
       </ApolloProvider>
     );

@@ -1,26 +1,19 @@
 import React, { Component } from 'react';
-import { gql } from 'apollo-boost';
 import { Query } from 'react-apollo';
 
-const getPlayersQuery = gql`
-  {
-    players {
-      name
-    }
-  }
-`;
+import { getPlayers } from '../queries/queries';
 
 class PlayerList extends Component {
   render() {
     return (
       <div>
         <ul id="player-list">
-          <Query query={getPlayersQuery}>
+          <Query query={getPlayers}>
             {({ loading, error, data }) =>
               loading
                 ? 'Loading...'
                 : data.players.map(player => (
-                    <li key={player.name}>{player.name}</li>
+                    <li key={player.id}>{player.name}</li>
                   ))
             }
           </Query>
