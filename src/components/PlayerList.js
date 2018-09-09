@@ -13,8 +13,8 @@ class PlayerList extends Component {
   }
   render() {
     return (
-      <div>
-        <ul id="player-list">
+      <div style={{ display: 'flex' }}>
+        <ul id="player-list" style={{ flex: 1 }}>
           <Query query={getPlayers}>
             {({ loading, error, data }) =>
               loading

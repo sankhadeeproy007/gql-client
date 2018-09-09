@@ -6,7 +6,7 @@ import { getPlayerDetails } from '../queries/queries';
 class PlayerDetails extends Component {
   render() {
     return (
-      <div>
+      <div style={{ flex: 1 }}>
         <Query query={getPlayerDetails} variables={{ id: this.props.playerId }}>
           {({ loading, error, data }) =>
             loading ? (
