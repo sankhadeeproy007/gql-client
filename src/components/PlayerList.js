@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
 import { Query } from 'react-apollo';
 
+import PlayerDetails from './PlayerDetails';
 import { getPlayers } from '../queries/queries';
 
 class PlayerList extends Component {
+  constructor() {
+    super();
+    this.state = {
+      selectedPlayer: null
+    };
+  }
   render() {
     return (
       <div>
@@ -13,11 +20,21 @@ class PlayerList extends Component {
               loading
                 ? 'Loading...'
                 : data.players.map(player => (
-                    <li key={player.id}>{player.name}</li>
+                    <li
+                      key={player.id}
+                      onClick={() =>
+                        this.setState({ selectedPlayer: player.id })
+                      }
+                    >
+                      {player.name}
+                    </li>
                   ))
             }
           </Query>
         </ul>
+        {this.state.selectedPlayer && (
+          <PlayerDetails playerId={this.state.selectedPlayer} />
+        )}
       </div>
     );
   }

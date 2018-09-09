@@ -37,4 +37,31 @@ const addPlayer = gql`
   }
 `;
 
-export { getPlayers, getTeams, addPlayer };
+const addTeam = gql`
+  mutation($name: String!, $leaguePosition: Int!, $city: String!) {
+    addTeam(name: $name, leaguePosition: $leaguePosition, city: $city) {
+      name
+      id
+    }
+  }
+`;
+
+const getPlayerDetails = gql`
+  query($id: ID) {
+    player(id: $id) {
+      name
+      position
+      isRightFooted
+      team {
+        name
+        leaguePosition
+        players {
+          name
+          id
+        }
+      }
+    }
+  }
+`;
+
+export { getPlayers, getTeams, addPlayer, addTeam, getPlayerDetails };

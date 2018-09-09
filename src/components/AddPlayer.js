@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Query, Mutation } from 'react-apollo';
 
-import { getTeams, addPlayer } from '../queries/queries';
+import { getTeams, addPlayer, getPlayers } from '../queries/queries';
 
 class AddPlayer extends Component {
   constructor() {
@@ -27,13 +27,11 @@ class AddPlayer extends Component {
           mutation={addPlayer}
           onError={error => this.setState(initialState)}
           onCompleted={data => {
-            alert(data.addPlayer.name + ' added succesfully!');
             this.setState(initialState);
           }}
         >
           {(addPlayer, { loading, error, data }) => (
             <form
-              id="add-team"
               onSubmit={e => {
                 e.preventDefault();
                 addPlayer({
@@ -42,7 +40,8 @@ class AddPlayer extends Component {
                     position: this.state.position,
                     isRightFooted: this.state.isRightFooted,
                     teamId: this.state.teamId
-                  }
+                  },
+                  refetchQueries: [{ query: getPlayers }]
                 });
               }}
             >
