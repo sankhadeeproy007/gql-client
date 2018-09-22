@@ -16,7 +16,7 @@ class App extends Component {
     return (
       <ApolloProvider client={client}>
         <div id="main">
-          <h1>Learn GraphQL!</h1>
+          <h1>Players</h1>
           <PlayerList />
           <AddPlayer />
           {/* <AddTeam /> */}

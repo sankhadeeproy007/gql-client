@@ -6,7 +6,12 @@ import { getPlayerDetails } from '../queries/queries';
 class PlayerDetails extends Component {
   render() {
     return (
-      <div style={{ flex: 1 }}>
+      <div
+        style={{
+          fontSize: 20,
+          padding: 30
+        }}
+      >
         <Query query={getPlayerDetails} variables={{ id: this.props.playerId }}>
           {({ loading, error, data }) =>
             loading ? (
@@ -21,7 +26,7 @@ class PlayerDetails extends Component {
                 </ul>
                 <ul>League Position: {data.player.team.leaguePosition}</ul>
                 <ul>
-                  Teammates:
+                  All {data.player.team.name} players :
                   {data.player.team.players.map(player => (
                     <li key={player.id}>{player.name}</li>
                   ))}

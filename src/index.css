@@ -1,5 +1,85 @@
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web');
 body {
   background: #eee;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Titillium Web', sans-serif;
+  margin: 0;
+}
+#main {
+  padding: 20px;
+}
+
+#main h1 {
+  color: #444;
+  margin-left: 50px;
+}
+
+#player-list {
+  padding: 0;
+}
+
+#player-list li {
+  display: inline-block;
+  padding: 10px;
+  margin: 8px;
+  border-radius: 5px;
+  border: 1px solid #9b36df;
+  box-shadow: 2px 2px 5px rgba(174, 75, 240, 0.308);
+  cursor: pointer;
+  color: #9b36df;
+}
+
+form {
+  background: white;
+  padding: 20px;
+  width: 500px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.116);
+}
+
+form .field {
+  margin: 10px;
+}
+
+form .field label {
+  margin-right: 10px;
+}
+
+form .field input {
+  height: 20px;
+}
+
+form button {
+  padding: 14px;
+  background: #9b36df;
+  box-shadow: 2px 2px 5px rgba(174, 75, 240, 0.308);
+  margin: 10px;
+  border: 0;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.details {
+  width: 33%;
+  position: fixed;
+  right: 0;
+  color: rgb(255, 255, 255);
+  top: 0;
+  bottom: 0;
+  background: #9050bb;
+  box-shadow: -5px 2px 15px rgba(174, 75, 240, 0.308);
+}
+
+.details ul {
+  list-style: none;
+}
+
+.details li {
+  padding-left: 15px;
+  font-size: 17px;
+  margin: 5px;
 }
